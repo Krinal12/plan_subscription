@@ -1,0 +1,4 @@
+This is monthly plan
+<%= ((current_user.subscription.end_date)  - DateTime.now).to_i   %> Days remainning
+
+<%= link_to 'Upgrade plan', new_plan_subscription_path(@sub) %>

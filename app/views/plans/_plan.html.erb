@@ -1,0 +1,22 @@
+<div id="<%= dom_id plan %>">
+  <p>
+    <strong>Name:</strong>
+    <%= plan.name %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= number_to_currency(plan.price) %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= plan.description %>
+  </p>
+
+  <p>
+    <strong>Plan type:</strong>
+    <%= plan.plan_type %>
+  </p>
+
+</div>
