@@ -2,10 +2,8 @@ class Subscription < ApplicationRecord
   belongs_to :user
   belongs_to :plan
   enum plan_status: {not_active: 0, active: 1};
-    before_create :update_user_id
+    # before_create :update_user_id
   after_create_commit :active
-  # before_validation :plan_active, on: :create
-  validates :start_date,  presence: true
   # def plan_active
   #   deactivate_plan_one
   #   # activate_plan_two
@@ -28,13 +26,13 @@ class Subscription < ApplicationRecord
   def active 
     update_attribute :plan_status, "active"
   end
-  def update_user_id 
-     p "innnnnnnnnnnnnnnnnnnnnnn"
+  # def update_user_id 
+  #    p "innnnnnnnnnnnnnnnnnnnnnn"
     
-      p "after ifffffffffffffffffffff"
-      update_attribute :user_id, "nil"
+  #     p "after ifffffffffffffffffffff"
+  #     update_attribute :user_id, "nil"
     
-  end
+  # end
   
 end
 
