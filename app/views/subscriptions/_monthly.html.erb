@@ -1,4 +1,14 @@
 This is monthly plan
 <%= ((current_user.subscription.end_date)  - DateTime.now).to_i   %> Days remainning
 
-<%= link_to 'Upgrade plan', new_plan_subscription_path(@sub) %>
+<%= form_with model: [ current_user.plan, current_user.plan.subscriptions.build ] do |form| %>
+    <p>
+      <%= form.hidden_field :start_date %>
+    </p>
+    <p>
+      <%= form.hidden_field :end_date %>
+    </p>
+    <div class="field">
+    </div>
+      <%= form.submit "Upgrade Plan" %>
+  <% end %>

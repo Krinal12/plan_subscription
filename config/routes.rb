@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'visitor/index'
+  get 'subscriptions/upgrade'
+
   resources :plans do
     resources :subscriptions
     get 'switch_plans'

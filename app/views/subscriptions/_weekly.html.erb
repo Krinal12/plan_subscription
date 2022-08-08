@@ -1,2 +1,14 @@
 this is weekly plan
-<%= ((current_user.subscription.end_date)  - DateTime.now).to_i   %>Days remainning
+<%= ((current_user.subscription.end_date)  - DateTime.now).to_i   %>Days remainning 
+  <%= form_with model: [ current_user.plan, current_user.plan.subscriptions.build ] do |form| %>
+    <p>
+      <%= form.hidden_field :start_date %>
+    </p>
+    <p>
+      <%= form.hidden_field :end_date %>
+    </p>
+    <div class="field">
+    </div>
+      <%= form.submit "Upgrade Plan" %>
+  <% end %>
+   

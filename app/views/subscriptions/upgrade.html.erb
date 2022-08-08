@@ -1,0 +1,6 @@
+<% if current_user.subscription.plan_id == 2 %>
+  <%= ((current_user.subscription.end_date)  - DateTime.now).to_i   %>
+<% end %>
+<% if current_user.subscription.plan_id == 3 %>
+  <%= ((current_user.subscription.end_date)  - DateTime.now).to_i   %>
+<% end %>

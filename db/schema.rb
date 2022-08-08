@@ -20,12 +20,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_26_090206) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "roles", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "subscriptions", force: :cascade do |t|
     t.date "start_date"
     t.date "end_date"
@@ -33,7 +27,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_26_090206) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "plan_id", null: false
-    t.integer "status", default: 1
     t.integer "plan_status"
     t.index ["plan_id"], name: "index_subscriptions_on_plan_id"
     t.index ["user_id"], name: "index_subscriptions_on_user_id"
